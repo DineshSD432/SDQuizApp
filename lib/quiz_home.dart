@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:quiz_app/text_style_template.dart';
 
 class QuizHome extends StatelessWidget {
-  const QuizHome({super.key});
+  const QuizHome(this.startQuiz, {super.key});
+
+  final void Function() startQuiz;
 
   void pressButton() {
     print("Button Pressed");
@@ -35,7 +37,7 @@ class QuizHome extends StatelessWidget {
             height: 30,
           ),
           OutlinedButton.icon(
-            onPressed: pressButton,
+            onPressed: startQuiz,
             style: OutlinedButton.styleFrom(
               foregroundColor: Colors.white,
               backgroundColor: Colors.blue,
